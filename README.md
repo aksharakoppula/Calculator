@@ -1,1 +1,39 @@
-# Calculator
+import sys
+def add (x, y):
+    return x+y
+def subtract (x, y):
+    return x-y
+def multiply (x, y):
+    return x*y
+def divide (x, y):
+    return x/y
+
+
+running = True
+print("Welcome to the Calculator!")
+print()
+while running:
+    print("1 - Add")
+    print("2 - Subtract")
+    print("3 - Multiply")
+    print("4 - Divide")
+    print("5 - Exit")
+    print()
+    response = input("Please Enter a Number 1 Through 5: ")
+    while not response.isdigit() or int(response) < 1 or int(response) > 5:
+        response = input("Invalid Entry, Please Enter an Integer from 1 Through 5: ")
+    response = int(response)
+    if response == 5:
+        running = False
+        print ("Goodbye!")
+        sys(exit)
+    x = input("Please enter your first value: ")
+    while not x.isnumeric():
+        x = input("Invalid entry, Please Enter a Valid Number: ")
+
+    y = input("Please enter your first value: ")
+    while not y.isnumeric() or (response == 4 and y == 0):
+        if not y.isnumeric():
+         y = input("Invalid entry, Please Enter a Valid Number: ")
+        else:
+            y = input ("Cannot Divide by Zero, Please enter a Non - Zero Number: ")# Calculator
