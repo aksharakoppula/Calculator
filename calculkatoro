@@ -27,17 +27,33 @@ while running:
     
     while not response.isdigit() or int(response) < 1 or int(response) > 5: 
         response = input("Invalid Entry, Please Enter an Integer from 1 Through 5: ") 
-        response = int(response) 
+    response = int(response) 
     if response == 5:
         running = False 
         print ("Goodbye!")
-        sys(exit)
-        x = input("Please enter your first value: ")
-        while not x.isnumeric(): x = input("Invalid entry, Please Enter a Valid Number: ")
-
-y = input("Please enter your first value: ")
-while not y.isnumeric() or (response == 4 and y == 0):
-    if not y.isnumeric():
-     y = input("Invalid entry, Please Enter a Valid Number: ")
+        sys.exit()
     else:
-        y = input ("Cannot Divide by Zero, Please enter a Non - Zero Number: ")# Calculator
+        print()
+        x = input("Please enter your first value: ")
+        while not x.isnumeric(): 
+            x = input("Invalid entry, Please Enter a Valid Number: ")
+        x = int(x)
+
+        y = input("Please enter your second value: ")
+        while not y.isnumeric() or (response == 4 and y == 0):
+            if not y.isnumeric():
+                y = input("Invalid entry, Please Enter a Valid Number: ")
+            else:
+                y = input ("Cannot Divide by Zero, Please enter a Non - Zero Number: ")# Calculator
+        y = int(y)
+        answer = None
+        if response == 1:
+            answer = add(x,y)
+        elif response == 2:
+            answer = subtract(x,y)
+        elif response == 3:
+            answer = multiply(x,y)
+        else:
+            answer = divide(x,y)
+        print(f"Solution: {answer}")
+        print()
